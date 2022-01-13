@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,22 +17,21 @@ import java.util.List;
 @NoArgsConstructor
 public class Pessoa {
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    private List<Phone> phone;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false)
-    private String FirstName;
+    private String firstName;
 
     @Column(nullable = false)
-    private String LastName;
+    private String lastName;
 
     @Column(nullable = false, unique = true)
-    private String CPF;
+    private String cpf;
 
-    @Column(nullable = false)
-    private LocalDate Nascimento;
+    private LocalDate birthDate;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    private List<Phone> phones = new ArrayList<>();
 }
