@@ -1,4 +1,4 @@
-package projetoDio.personapi.dito.resposta;
+package projetoDio.personapi.dtos;
 
 import lombok.Builder;
 import lombok.Data;

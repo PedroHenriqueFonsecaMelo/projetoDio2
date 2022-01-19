@@ -1,20 +1,17 @@
-package projetoDio.personapi;
+package projetoDio.personapi.dtos;
+
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
-import projetoDio.personapi.*;
-import projetoDio.personapi.dtos.PessoaDTO;
 import projetoDio.personapi.entidade.Pessoa;
 
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface PersonMapper {
-
-    PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
 
     @Mapping(target = "birthDate", source = "birthDate", dateFormat = "dd-MM-yyyy")
     Pessoa toModel(PessoaDTO dto);
 
-    PessoaDTO toDTO(Pessoa pessoa);
+    PessoaDTO toDTO(Pessoa dto);
 }
