@@ -3,7 +3,6 @@ package projetoDio.personapi.dtos;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 import projetoDio.personapi.entidade.Pessoa;
 
 
@@ -14,4 +13,6 @@ public interface PersonMapper {
     Pessoa toModel(PessoaDTO dto);
 
     PessoaDTO toDTO(Pessoa dto);
+
+
 }
