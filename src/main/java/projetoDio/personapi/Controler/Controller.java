@@ -49,6 +49,6 @@ public class Controller {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) throws PersonNotFoundException {
         personServices.delete(id);
-        
+
     }
 }
